@@ -1,0 +1,52 @@
+<!-- views/login.ejs -->
+<!doctype html>
+<html>
+<head>
+    <title>Welcome to Burda analytics</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+    <style>
+        body        { padding-top:80px; }
+    </style>
+    <script>
+      (function(w,d,s,g,js,fs){
+        g=w.gapi||(w.gapi={});g.analytics={q:[],ready:function(f){this.q.push(f);}};
+        js=d.createElement(s);fs=d.getElementsByTagName(s)[0];
+        js.src='https://apis.google.com/js/platform.js';
+        fs.parentNode.insertBefore(js,fs);js.onload=function(){g.load('analytics');};
+      }(window,document,'script'));
+    </script>
+</head>
+<body style="background-image: url('/img/bg.jpg');">
+<div class="container">
+
+<div class="col-sm-12">
+
+    <center><h1><span class="fa fa-sign-in"></span> Login to Burda Analytics</h1></center>
+    <!-- LOGIN FORM -->
+    <hr>
+    <center><div id="embed-api-auth-container"></div></center>
+
+</div>
+
+</div>
+</body>
+<script>
+  gapi.analytics.ready(function() {
+    /**
+     * Authorize the user immediately if the user has already granted access.
+     * If no access has been created, render an authorize button inside the
+     * element with the ID "embed-api-auth-container".
+     */
+    gapi.analytics.auth.authorize({
+      container: 'embed-api-auth-container',
+      clientid: '532462454691-svtj54st9puu03q57j8fh34i32e08o99.apps.googleusercontent.com'
+    });
+    gapi.analytics.auth.on('signIn', function() {
+      console.log(gapi.analytics.auth.getUserProfile());
+      window.location.assign("/index-lisa");
+    });
+
+  })
+</script>
+</html>

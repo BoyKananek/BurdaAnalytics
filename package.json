@@ -1,0 +1,21 @@
+{
+  "name": "burdaanalytics",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "Kananek Atichatviwat",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.5.1",
+    "express": "^4.14.0",
+    "nodemon": "^1.10.0",
+    "router": "^1.1.4"
+  },
+  "devDependencies": {
+    "font-awesome": "^4.6.3"
+  }
+}
